@@ -1,7 +1,7 @@
-C Minifier
+CSS Minifier
 ==========
 
-A basic, portable C/C++ minifier I initially wrote to minify shaders.
+A basic, portable CSS minifier which makes minified CSS files for faster access and lowering memory space usage.
 
 This basically trims whitespace and removes comments. It doesn't do any lexical analyzing, so complex or twisted cases may make it fail.
 
