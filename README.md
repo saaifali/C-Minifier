@@ -24,10 +24,11 @@ Example
 
 Given the following input file, `style.css`
 
-The output file is "style_min.css".
+The output file is `style_min.css`.
 
 
 About the authors:
+==================
 
     Saif Ali
     37,  CS B 6th semester
