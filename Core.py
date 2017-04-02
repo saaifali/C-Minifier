@@ -1,6 +1,9 @@
 import re
 
 
+in_property_set = False
+has_data = False
+
 def remove_everything_between(subs1, subs2, line):
     regex = re.compile(subs1 + r'.*' + subs2)
     return regex.sub('', line)
@@ -15,6 +18,22 @@ def remove_everything_past(subs, line):
     regex = re.compile(subs + r'.*')
     return regex.sub('', line)
 
+def is_in_property_set():
+    return in_property_set
+
+def enter_property_set():
+    global in_property_set
+    in_property_set = True
+    return
+
+def exit_property_set():
+    global in_property_set
+    in_property_set = False
+    return
+
+
+def has_data():
+    return has_data
 
 
 def remove_blank_lines(lines):
@@ -90,6 +109,28 @@ def remove_comments(lines):
     return newlines
 
 
-def optimize_line(line, in_property_set = False, has_data = False):
-    for c in line:
-        pass
+def optimize_lines(lines):
+    result = []
+
+    for line in lines:
+        line = re.sub(r'[ ]*[{]', "{", line)
+        line = re.sub(r'[ ]*[}]', "}", line)
+        line = re.sub(r'[ ]*[:]', ":", line)
+        line = re.sub(r'[:][ ]*', ":", line)
+        line = re.sub(r'[ ]*[;]$]', ";", line)
+        line = re.sub(r'[ ]*[\n]$]', "\n", line)
+
+        result.append(line)
+
+    return result
+
+
+def condense_lines(lines):
+    final = []
+    for line in lines:
+        result = str()
+        for c in line:
+            if c != '\n':
+                result+= c
+        final.append(result)
+    return final

@@ -11,11 +11,13 @@ def minify(filename):
         lines = source.readlines()
     print lines
 
-    lines = Core.remove_comments(lines)
-    lines = Core.remove_blank_lines(lines)
     lines = Core.replace_tabs2(lines)
     lines = Core.remove_trailing_white_spaces(lines)
-
+    lines = Core.remove_blank_lines(lines)
+    lines = Core.remove_comments(lines)
+    lines = Core.remove_blank_lines(lines)
+    lines = Core.optimize_lines(lines)
+    lines = Core.condense_lines(lines)
     print lines
 
     destination = filename.replace(".css","_min.css")
