@@ -16,77 +16,23 @@ Use
 ===
 
 - `python cssmin.py`
+Then Follow instructions
 
 
 Example
 =======
 
-Given the following input file, `style.css`:
+Given the following input file, `style.css`
 
-.description {
-	max-width: 705px;
-	color: grey;
-	font-size: 1.875em;
-
-}
-
-.screenshot {
-	max-width: 460px;
-	max-height: 460px;
-	margin-right: 20px;
-}
+The output file is "style_min.css".
 
 
-* {
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	-ms-box-sizing: border-box;
-	box-sizing: border-box;
-}
+About the authors:
 
-.app {
-	display: flex
-}
+    Saif Ali
+    37,  CS B 6th semester
+    USN - 4JC14CS086
 
-/* Comment this shit */
-
-.title {
-	padding-left: 10px;
-	padding-top: 20px;
-	margin-bottom: 20px;
-	background-color: #33bebe;
-	max-width: 1165px;
-	color: white;
-}
-,
-
-`python cssmin.py ` will output the following result:
-
-.description {
-max-width: 705px;
-color: grey;
-font-size: 1.875em;
-}
-.screenshot {
-max-width: 460px;
-max-height: 460px;
-margin-right: 20px;
-}
-* {
--webkit-box-sizing: border-box;
--moz-box-sizing: border-box;
--ms-box-sizing: border-box;
-box-sizing: border-box;
-}
-.app {
-display: flex
-}
-.title {
-padding-left: 10px;
-padding-top: 20px;
-margin-bottom: 20px;
-background-color: #33bebe;
-max-width: 1165px;
-color: white;
-}
-
+    Rahul Amin,
+    33, CS B 6th semester
+    USN - 4JC14CS0
