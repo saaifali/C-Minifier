@@ -5,7 +5,6 @@ A basic, portable CSS minifier which makes minified CSS files for faster access 
 
 This basically trims whitespace and removes comments. It doesn't do any lexical analyzing, so complex or twisted cases may make it fail.
 
-I hope it will be as useful to you as it is to me.
 
 Requirements
 ============
@@ -16,34 +15,78 @@ Requirements
 Use
 ===
 
-- `python minifier.py source.c`
+- `python cssmin.py`
 
 
 Example
 =======
 
-Given the following input file, `test.c`:
-```
-void	do_math(int * x) {
-  *x += 5;
+Given the following input file, `style.css`:
+
+.description {
+	max-width: 705px;
+	color: grey;
+	font-size: 1.875em;
+
 }
 
-int	main(void) {
-  int	result = -1, val = 4;
-
-  do_math(&val);
-  return result;
+.screenshot {
+	max-width: 460px;
+	max-height: 460px;
+	margin-right: 20px;
 }
-```
+
+
+* {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.app {
+	display: flex
+}
+
+/* Comment this shit */
+
+.title {
+	padding-left: 10px;
+	padding-top: 20px;
+	margin-bottom: 20px;
+	background-color: #33bebe;
+	max-width: 1165px;
+	color: white;
+}
 ,
 
-`python minifier.py test.c` will output the following result:
+`python cssmin.py ` will output the following result:
 
-```
-void do_math(int*x){*x+=5;}int main(void){int result=-1,val=4;do_math(&val);return result;}
-```
+.description {
+max-width: 705px;
+color: grey;
+font-size: 1.875em;
+}
+.screenshot {
+max-width: 460px;
+max-height: 460px;
+margin-right: 20px;
+}
+* {
+-webkit-box-sizing: border-box;
+-moz-box-sizing: border-box;
+-ms-box-sizing: border-box;
+box-sizing: border-box;
+}
+.app {
+display: flex
+}
+.title {
+padding-left: 10px;
+padding-top: 20px;
+margin-bottom: 20px;
+background-color: #33bebe;
+max-width: 1165px;
+color: white;
+}
 
-License
-=======
-
-GPL v3
