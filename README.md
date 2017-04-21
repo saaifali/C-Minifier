@@ -16,8 +16,9 @@ Use
 ===
 
 - `python cssmin.py`
-Then Follow instructions
-
+Then the GUI opens up. Browse for the given CSS file.
+Click on the minify button to minify the CSS file.
+The minified css file is stored with the extension _min.css
 
 Example
 =======
@@ -36,4 +37,4 @@ About the authors:
 
     Rahul Amin,
     33, CS B 6th semester
-    USN - 4JC14CS0
+    USN - 4JC14CS032
