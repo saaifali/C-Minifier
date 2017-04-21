@@ -1,9 +1,5 @@
 import re
 
-
-in_property_set = False
-has_data = False
-
 def remove_everything_between(subs1, subs2, line):
     regex = re.compile(subs1 + r'.*' + subs2)
     return regex.sub('', line)
@@ -44,11 +40,6 @@ def remove_blank_lines(lines):
     return replacedLines
 
 def replace_tabs(lines):
-    for line in lines:
-        line.replace("\t", " ")
-    return lines
-
-def replace_tabs2(lines):
     replacedLines = []
     for line in lines:
         result = str()
